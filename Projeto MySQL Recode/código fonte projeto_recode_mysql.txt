@@ -1,0 +1,155 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- CRIANDO NOVO SCHEMA(BANCO DE DADOS)
+create database fseletro 
+
+-- CHAMANDO O DB PARA USAR
+   use fseletro  
+
+   create table produtos(  -- TABELA PRODUTOS CRIADA
+   idproduto int auto_increment primary key,
+   categoria varchar(100),
+   imagem varchar(100),
+   descricao varchar(500),
+   preco float,
+   preco_venda float
+   );
+   
+    
+    insert into produtos (categoria,imagem,descricao,preco,preco_venda) -- INSERINDO OS ELEMENTOS DE MINHA TABELA
+    /* categoria geladerira*/
+    values ("geladeira" ,"Image/geladeira4.jpeg","Geladeira Frost Free Brastemp Side Inverse 540 litros",6839.00, 5019.00),
+   	("geladeira" ,"Image/geladeira3.jpeg","Geladeira Frost Free Brastemp branca 375 litros",2068.60, 1910.90),
+    ("geladeira" ,"Image/geladeira2.png","Geladeira Frost Free Brastemp Consul prata 340 litros",2169.00, 2069.00),
+    /* categoria fogao*/
+    ("fogao" ,"Image/fogao2.jpeg","Fogão 4 Bocas Consul Inox com Mesa de Vidro",1200.00, 1129.00),
+    ("fogao" ,"Image/fogao1.jpeg","Fogão de Piso 4 Bocas Atlas Monaco com Acendimento Automático",600.00, 519.70),
+    /* categoria microondas*/
+    ("mircoondas" ,"Image/microondas3.jpeg","Micro-ondas Consul 32 litros inox 220V",580.00, 409.88),
+    ("microondas" ,"Image/microondas2.jpeg","Micro-ondas 25L espelhado Philco 220V",508.70, 463.53),
+    ("microondas" ,"Image/microondas1.jpeg","Forno de Micro-ondas Eletrolux 20L branco",459.00, 436.05),
+    /*categoria lava-louça*/
+    ("lavalouca" ,"Image/filtro.jpeg","Lava-louça Eletrolux Inox com 10 serviços,06 programas de lavagem,e painel Blue Touch",3500.00, 2799.00),
+    /*categoria lavadoura*/
+    ("lavadoura" ,"Image/lavadora3.jpeg","Lavadoura de roupas Philco Inverter 12kg",2399.00, 2179.90),
+    ("lavadoura" ,"Image/maquinadelavar2.jpeg","Lavadoura de roupas Brastemp 11kg com turbo performance Branca",1699.00, 1214.10),
+    ("lavadoura" ,"Image/maquinadelavar1.jpeg","Lavadoura de roupas Philco Inverter 12kg",2399.00, 2179.90);
+    
+	create table `financeiro`.`produto`( --  CRIANDO TABELA FINANCEIRO
+    `idproduto` INT NOT NULL,
+   	PRIMARY KEY (idproduto));
+    
+    /*TESTANDO GRUPO DE COMANDOS(select,insert,update,delete e DCL) na minha tabela produtos: 
+    -- SELECT
+    SELECT *
+    FROM fseletro.produtos
+    WHERE categoria = `geladerira`;
+    
+    SELECT *
+    FROM fseletro.produtos
+    WHERE preco < 1000;
+    
+     SELECT *
+    FROM fseletro.produtos
+    WHERE preco > 500 and < 900;
+    
+    SELECT *
+    FROM fseletro.produtos
+    WHERE descricao LIKE `%lava%`;
+    
+    SELECT *
+    FROM fseletro.produtos
+    WHERE descricao LIKE `%lava%`;
+    
+  
+    SELECT *
+    FROM fseletro.produtos
+    WHERE descricao LIKE `lava_lou%`;
+    
+    
+    -- UPDATE
+    UPDATE `fseleto`.`produtos` 
+    SET `preco_venda` = `1500` 
+    WHERE (`id` = `10`);
+    
+    select * from produtos;
+    
+    -- DELETE
+    
+    select *
+    from produtos
+    where id= 10;
+    
+    -- DCL(linguagem de controle de dados)
+    
+    CREATE USER `user3`@`localhost` IDENTIFIED WITH mysql_native_password BY 'pass123'; -- criei um novo usuario chamado 'user3' e eu posso definir quais são o papéis e perfis 	eu defino para esse usuário. 
+    
+    */
+    
+   -- TABELA DE COMPRA DE USUÁRIOS
+	create table solicitacoes (
+	idusuario INT AUTO_INCREMENT PRIMARY KEY,
+	nome VARCHAR(100),
+	tel VARCHAR(110),
+	endereco VARCHAR(30),                   
+	produto VARCHAR(260),
+	precoUnidade FLOAT,
+	totalUnidades INT,
+	valorFinal FLOAT
+	);
+
+	-- DADOS DOS USUÁRIOS
+	INSERT INTO soicitacoes (nome, tel, endereco, produto, precoUnidade,totalUnidades , valorFinal)
+	VALUES ('Felipe Santa Cruz Simão','(11)97738-5647','Rua margaridas 1900','Geladeira Frost Free Brastemp Side Inverse 540 litros', 5019.00, 2, 10038.00),         
+	('Jaqueline Magalhães Castro', '(11) 9555-5555', 'Estrada principal 780', 'Fogão 4 Bocas Consul Inox com Mesa de Vidro',1129, 1, 1129),
+	('Rosângela Maria santa cruz Simão', '(11) 93333-3333', 'Rua jardim das rosas 110', 'Micro-ondas Consul 32 litros inox 220V', 409.88, 4, 1639.52),
+	('Claudio Borges', '(11)9999-9999', 'Rua D 344', 'Lava-louça Eletrolux Inox com 10 serviços,06 programas de lavagem,e painel Blue Touch', 2799.00, 2, 5598.00),
+	('Terezinha Borges Santa Cruz Simão ', '(11)4400-4939', 'Rua novo mundo 500', 'Lavadoura de roupas Brastemp 11kg com turbo performance Branca', 1214.10, 3, 3642.3);
+    
