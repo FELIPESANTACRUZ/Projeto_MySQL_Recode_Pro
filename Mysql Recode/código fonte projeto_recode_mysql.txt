@@ -33,10 +33,8 @@ create database fseletro
     ("lavadoura" ,"Image/maquinadelavar2.jpeg","Lavadoura de roupas Brastemp 11kg com turbo performance Branca",1699.00, 1214.10),
     ("lavadoura" ,"Image/maquinadelavar1.jpeg","Lavadoura de roupas Philco Inverter 12kg",2399.00, 2179.90);
     
-	create table `financeiro`.`produto`( --  CRIANDO TABELA FINANCEIRO
-    `idproduto` INT NOT NULL,
-   	PRIMARY KEY (idproduto));
-    
+
+
     /*TESTANDO GRUPO DE COMANDOS(select,insert,update,delete e DCL) na minha tabela produtos: 
     -- SELECT
     SELECT *
@@ -97,10 +95,20 @@ create database fseletro
 	);
 
 	-- DADOS DOS USUÁRIOS
-	INSERT INTO soicitacoes (nome, tel, endereco, produto, precoUnidade,totalUnidades , valorFinal)
+	INSERT INTO solicitacoes (nome, tel, endereco, produto, precoUnidade,totalUnidades , valorFinal)
 	VALUES ('Felipe Santa Cruz Simão','(11)97738-5647','Rua margaridas 1900','Geladeira Frost Free Brastemp Side Inverse 540 litros', 5019.00, 2, 10038.00),         
 	('Jaqueline Magalhães Castro', '(11) 9555-5555', 'Estrada principal 780', 'Fogão 4 Bocas Consul Inox com Mesa de Vidro',1129, 1, 1129),
 	('Rosângela Maria santa cruz Simão', '(11) 93333-3333', 'Rua jardim das rosas 110', 'Micro-ondas Consul 32 litros inox 220V', 409.88, 4, 1639.52),
 	('Claudio Borges', '(11)9999-9999', 'Rua D 344', 'Lava-louça Eletrolux Inox com 10 serviços,06 programas de lavagem,e painel Blue Touch', 2799.00, 2, 5598.00),
 	('Terezinha Borges Santa Cruz Simão ', '(11)4400-4939', 'Rua novo mundo 500', 'Lavadoura de roupas Brastemp 11kg com turbo performance Branca', 1214.10, 3, 3642.3);
+
+
+	alter table solicitacoes;
+	insert into solicitacoes(nome,tel,endereco,produto,precoUnidade,totalUnidades,valorFinal)
+	VALUES ('Omar','(11)9309-3834','Rua wanted 212','Lavadoura de roupas Brastemp 11kg com turbo performance Branca', 1699.00, 3, 5097.00),
+	('Leticia','(11)94838-3627','Rua Rosas 3955','Micro-ondas 25L espelhado Philco 220V', 508.70, 4, 512.70),
+	('Marizete Magalhães','(11)97392-9299','Rua jacundá','Fogão de Piso 4 Bocas Atlas Monaco com Acendimento Automático', 600.00, 1, 600.00),
+	('James','(11)9829-3328','Rua Bittencourt 333','Forno de Micro-ondas Eletrolux 20L branco',  459.00, 3, 1377.00),
+	('Lays ','(11)9397-3883','Rua 12 de outubro','Geladeira Frost Free Brastemp branca 375 litros', 2068.60, 4, 8274.40);
+
     
